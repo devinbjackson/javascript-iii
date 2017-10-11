@@ -37,7 +37,11 @@ var employees = [{
 //  3. Return the updated employee array.
 
 // Code here
-
+function employeeUpdater(){
+employees.splice(2,1);
+employees[3].department = "HR";
+return employees;
+}
 
 
 
@@ -55,7 +59,11 @@ var employees = [{
 var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 // Code here
-
+function removeDuplicates(){
+  return workplaceAccidents.filter(function(item, pos, self) {
+    return self.indexOf(item) == pos;
+})
+}
 
 
 
@@ -87,6 +95,8 @@ var cat = {
 var grumpyActivity;
 var fluffy2ndFriend;
 
+grumpyActivity = cat.catFriends[0].activities[1];
+fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -124,7 +134,11 @@ var myCar = {
 
 // Code here
 
-
+function recordCleaner(){
+  myCar.accidents.forEach(function(val){
+    val.atFaultForAccident = false;
+  });
+}
 
 
 
@@ -144,5 +158,17 @@ var myCar = {
 var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 
 
-
+function looper(){
+ for(var i =0; i<numsArr.length;i++){
+   for(var j =0; j<numsArr[i].length;j++){
+   if(numsArr[i][j]%2===0){
+     numsArr[i].splice(j,1,"even");
+   }
+   else {
+          numsArr[i].splice(j,1,"odd");
+   }
+ }
+ }
+  return numsArr;
+}
 
